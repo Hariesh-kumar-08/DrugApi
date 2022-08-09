@@ -16,6 +16,7 @@ namespace DrugApi.Controllers
 
         public MethodsController(DataContext db)
         {
+            //
             _db = db;
         }
         [HttpPost]
