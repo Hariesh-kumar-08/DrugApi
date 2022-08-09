@@ -1,5 +1,6 @@
 ﻿using DrugApi.Data;
 using DrugApi.Models;
+using DrugApi.Repos.cs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,25 +11,17 @@ namespace DrugApi.Controllers
     public class MethodsController : ControllerBase
     {
 
-        private readonly DataContext _db;
+        private readonly  DummyRepo obj1;
 
-
-
-        public MethodsController(DataContext db)
+        public MethodsController()
         {
-            //
-            _db = db;
+            obj1 = new DummyRepo(new DataContext());
         }
         [HttpPost]
-        public IActionResult Buy(Dummy b)
+        public Dummy Buy(Dummy b)
         {
-            var a = (from i in _db.products where i.ProductId == b.ProductId select i).SingleOrDefault();
-            a.Stock-= 1;
-            _db.dummy.Add(b);
-            _db.SaveChanges();
-            return Ok(b);
-
+            var c = obj1.Buy(b);
+            return c;
         }
-
     }
 }
