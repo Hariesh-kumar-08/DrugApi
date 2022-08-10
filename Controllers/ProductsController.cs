@@ -12,7 +12,7 @@ namespace DrugApi.Controllers
     {
         private IProducts obj1;
 
-        public ProductsController(IProducts obj1)
+        public ProductsController()
         { 
             obj1 = new ProductRepo(new DataContext());
         }

@@ -11,16 +11,16 @@ namespace DrugApi.Controllers
     public class MethodsController : ControllerBase
     {
 
-        private readonly  DummyRepo obj1;
+        private readonly  DummyRepo obj;
 
         public MethodsController()
         {
-            obj1 = new DummyRepo(new DataContext());
+            obj = new DummyRepo(new DataContext());
         }
         [HttpPost]
         public Dummy Buy(Dummy b)
         {
-            var c = obj1.Buy(b);
+            var c = obj.Buy(b);
             return c;
         }
     }

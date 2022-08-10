@@ -24,6 +24,7 @@ namespace DrugApi.Repos.cs
         {
             var products = _db.products.Find(id);
             _db.products.Remove(products);
+            //return products;
            
         }
 
