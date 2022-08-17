@@ -17,6 +17,7 @@ namespace DrugApi.Controllers
             obj1 = new ProductRepo(new DataContext());
         }
 
+        
 
         [HttpGet]
 

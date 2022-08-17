@@ -16,6 +16,7 @@ namespace DrugApi.Models
 
         public string Password { get; set; }
 
+        public virtual ICollection<OrderDetail>? OrderDetails { get; set; }
 
     }
 }

@@ -19,5 +19,9 @@ namespace DrugApi.Models
 
         public virtual ICollection<Dummy>? Dummies{ get; set; }
 
+        public virtual ICollection<OrderDetail>? OrderDetail { get; set; }
+
+        
+
     }
 }

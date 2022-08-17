@@ -10,6 +10,14 @@ namespace DrugApi.Controllers
     [ApiController]
     public class MethodsController : ControllerBase
     {
+        //private DataContext db;
+
+        //public MethodsController(DataContext db)
+        //{
+        //    this.db = db;
+        //}
+
+
 
         private readonly  DummyRepo obj;
 
@@ -23,5 +31,25 @@ namespace DrugApi.Controllers
             var c = obj.Buy(b);
             return c;
         }
+
+    //    [HttpGet]
+    //    public ActionResult<List<OrderDetail>> Cart()
+    //    {
+    //       return obj.Index();
+    //    }
+
+    //    [HttpPost]
+    //    [Route("[action]")]
+    //    //[Route("[Id]")]
+    //    //  [ActionName("Add")]
+    //    public ActionResult Add(OrderDetail orderDetail)
+    //    {
+    //        var  p = (from i in db.products where i.ProductId == orderDetail.ProductId select i).SingleOrDefault();
+    //        obj.orderDetail(orderDetail);
+    //        obj.Save();
+    //       return Ok(p);
+    //    }
     }
 }
+
+//'[[' or ']]'

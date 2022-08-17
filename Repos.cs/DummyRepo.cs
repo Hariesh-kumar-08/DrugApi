@@ -20,5 +20,22 @@ namespace DrugApi.Repos.cs
             db.SaveChanges();
             return b;
         }
+
+        public void  orderDetail(OrderDetail orderDetail)
+        {
+            db.OrderDetail.Add(orderDetail);
+
+        }
+
+        public List<OrderDetail> Index()
+        {
+           var o= db.OrderDetail.ToList();
+            return o;
+        }
+
+        public void Save()
+        {
+            db.SaveChanges();
+        }
     }
 }

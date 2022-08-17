@@ -21,6 +21,9 @@ namespace DrugApi.Data
         public DbSet<Products> products { get; set; }
 
         public DbSet<Dummy> dummy { get; set; }
+
+        public DbSet<OrderDetail> OrderDetail { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
