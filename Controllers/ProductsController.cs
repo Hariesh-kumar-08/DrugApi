@@ -10,14 +10,20 @@ namespace DrugApi.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        private IProducts obj1;
+        private ProductRepo obj1;
 
         public ProductsController()
         { 
             obj1 = new ProductRepo(new DataContext());
         }
 
-        
+        [HttpPost]
+        public ActionResult <List<Products>> Create(Products p)
+        {
+            obj1.Create(p);
+            return obj1.Get();
+
+        }
 
         [HttpGet]
 
@@ -28,16 +34,7 @@ namespace DrugApi.Controllers
 
         }
 
-        [HttpPost]
 
-        public IActionResult Create(Products p)
-        {
-            obj1.Create(p);
-            obj1.Save();
-            var products = from i in obj1.Get() select i;
-            return Ok(products);
-
-        }
 
         [HttpGet("{id}")]
 

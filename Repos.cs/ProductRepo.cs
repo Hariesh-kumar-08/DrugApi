@@ -3,7 +3,7 @@ using DrugApi.Models;
 
 namespace DrugApi.Repos.cs
 {
-    public class ProductRepo : IProducts
+    public class ProductRepo 
     {
         private readonly DataContext _db;
 
@@ -14,9 +14,11 @@ namespace DrugApi.Repos.cs
             _db = db;
         }
 
-        public void Create(Products products)
+        public Products Create(Products products)
         {
             _db.products.Add(products);
+            _db.SaveChanges();
+            return products;
           
         }
 

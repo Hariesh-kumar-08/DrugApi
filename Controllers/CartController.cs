@@ -42,7 +42,7 @@ namespace DrugApi.Controllers
         {
 
             
-            var p = (from i in db.OrderDetail.Include(x=>x.Products) where i.ProductId == orderDetail.ProductId && i.UserId ==orderDetail.UserId select i).SingleOrDefault();
+            var p = (from i in db.OrderDetail where i.ProductId == orderDetail.ProductId && i.UserId ==orderDetail.UserId select i).SingleOrDefault();
             if (p == null)
             {
                 db.OrderDetail.Add(orderDetail);
@@ -53,7 +53,7 @@ namespace DrugApi.Controllers
             }
 
 
-            //db.SaveChanges();
+            db.SaveChanges();
             return p;
 
         }

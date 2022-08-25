@@ -9,19 +9,23 @@ namespace DrugApi.Models
         public int ProductId { get; set; }
         public string ProductName { get; set; }
 
-        public DateTime MfdDate { get; set; }
+        public string? MfdDate { get; set; }
 
-        public DateTime ExpDate { get; set; }
+        public string? ExpDate { get; set; }
 
         public int price { get; set; }
 
         public int Stock { get; set; }
 
-        public virtual ICollection<Dummy>? Dummies{ get; set; }
 
-        public virtual ICollection<OrderDetail>? OrderDetail { get; set; }
+        public virtual OrderDetail? OrderDetail { get; set; }
+        public virtual Dummy? Dummy { get; set; }
 
-        
+        //public virtual ICollection<Dummy>? Dummies{ get; set; }
+
+        //public virtual ICollection<OrderDetail>? OrderDetail { get; set; }
+
+
 
     }
 }

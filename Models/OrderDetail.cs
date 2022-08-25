@@ -8,7 +8,7 @@ namespace DrugApi.Models
         [Key]
         public int OrderId { get; set; }
 
-       // public string productName { get; set; }
+     
 
         public int qty { get; set; }
         public int? ProductId { get; set; }
@@ -19,13 +19,7 @@ namespace DrugApi.Models
         [ForeignKey("UserId")]
         public virtual Users? Users { get; set; }
 
-        [NotMapped]
-        public string? ProductName { get; set; }
-
-        [NotMapped]
-        public int? Price { get; set; }
-
-
+       
 
 
 
